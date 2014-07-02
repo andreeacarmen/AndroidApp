@@ -10,9 +10,7 @@
     
    	<TextView
    	    android:text="Cos de cumparaturi"
-   	    android:id="@+id/textView2"
    	    android:textSize="20sp"
-   	    android:layout_alignParentTop="true"
    	    android:layout_marginTop="30dp"
    	    android:layout_marginLeft="10dp"
    	    android:layout_width="wrap_content"
@@ -23,10 +21,15 @@
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_above="@+id/button2"
        >
-	</ListView>	
+	</ListView>
+	
+   <EditText android:id="@+id/edit_message"
+       	android:layout_above="@id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="edit_message" 
+        />
    
    <Button
        android:id="@+id/button2"
@@ -34,7 +37,6 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:text="Add"
-       
      />
    	
 </RelativeLayout>
