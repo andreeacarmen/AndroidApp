@@ -1,6 +1,10 @@
 package com.example.myapp;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONArray;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -8,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -35,7 +40,7 @@ public class NewActivity extends ListActivity {
         setListAdapter(adapter);
         
         lista.setOnItemClickListener(new OnItemClickListener() {
-
+        	
             @Override
             public void onItemClick(AdapterView<?> adaptor, View arg1, int position,
                     long id) {
@@ -44,6 +49,17 @@ public class NewActivity extends ListActivity {
             }
 
         }); 
+       
+        lista.setOnItemLongClickListener(new OnItemLongClickListener() {
+        	
+        	 public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                     int pos, long id) {
+                 
+        		 nume.remove(pos);
+        		 adapter.notifyDataSetChanged();
+                 return true;
+             }
+		});
         
         buton = (Button)findViewById(R.id.button2);
         buton.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +69,8 @@ public class NewActivity extends ListActivity {
             	nume.add("Dulciuri");
             	adapter.notifyDataSetChanged();
             }
-        });
+         });
+        
+       
 	}  
 }
