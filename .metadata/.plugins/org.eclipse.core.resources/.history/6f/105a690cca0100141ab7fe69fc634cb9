@@ -1,0 +1,19 @@
+package com.example.myapp;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+
+
+public class NewActivity extends ListActivity {
+	//Button btn;
+
+	protected void onCreate(Bundle savedInstanceState) {
+		Bundle b = new Bundle();
+		 b = getIntent().getExtras();
+		 String name = b.getString("name");
+		 System.out.println(name);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.new_activity);
+	}
+}
